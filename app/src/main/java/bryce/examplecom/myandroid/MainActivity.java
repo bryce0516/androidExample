@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     Log.i("Values", nameEditText.getText().toString());
 
+    Toast.makeText(this, "Hello " +nameEditText.getText().toString(), Toast.LENGTH_SHORT).show();
+
   }
 
   public void loginFunction(View view) {
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
   }
 
+  public void imageChangeFunction(View view) {
+
+  }
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

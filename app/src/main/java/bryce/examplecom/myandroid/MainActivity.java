@@ -2,6 +2,7 @@ package bryce.examplecom.myandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,20 +19,21 @@ public class MainActivity extends AppCompatActivity {
     ImageView bartImageView = (ImageView) findViewById(R.id.bartImage);
     ImageView homerImageView = (ImageView) findViewById(R.id.homerImage);
 
-    bartImageView.animate().translationYBy(1000).setDuration(2000);
-    homerImageView.animate().translationXBy(-1000).setDuration(2000);
+    bartImageView.animate().scaleX(0.5f).scaleY(0.5f).rotation(1800).translationXBy(-1000).setDuration(2000);
+    homerImageView.animate().translationXBy(100).setDuration(2000);
 
 
   }
+
   public void fadeForBart(View view) {
     Log.i("Info", "Bart Image tapped");
 
     ImageView bartImageView = (ImageView) findViewById(R.id.bartImage);
     ImageView homerImageView = (ImageView) findViewById(R.id.homerImage);
 
-      bartImageView.animate().alpha(0).setDuration(2000);
+    bartImageView.animate().alpha(0).setDuration(2000);
 
-      homerImageView.animate().alpha(1).setDuration(2000);
+    homerImageView.animate().alpha(1).setDuration(2000);
   }
 
   public void fadeForHomer(View view) {
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     homerImageView.animate().alpha(0).setDuration(2000);
 
   }
+
   public void clickFunction(View view) {
 
     EditText nameEditText = (EditText) findViewById(R.id.nameEditText);
@@ -53,12 +56,12 @@ public class MainActivity extends AppCompatActivity {
 
     Log.i("Values", nameEditText.getText().toString());
 
-    Toast.makeText(this, "Hello " +nameEditText.getText().toString(), Toast.LENGTH_SHORT).show();
+    Toast.makeText(this, "Hello " + nameEditText.getText().toString(), Toast.LENGTH_SHORT).show();
 
   }
 
   public void loginFunction(View view) {
-    Log.i("Info","LoginButton pressed");
+    Log.i("Info", "LoginButton pressed");
     EditText usernameEditText = (EditText) findViewById(R.id.usernameEditText);
     EditText passwordEditText = (EditText) findViewById(R.id.passwordEditText);
 
@@ -66,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
     Log.i("Password", passwordEditText.getText().toString());
 
     Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
+    Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+    startActivity(intent);
   }
 
   public void imageChangeFunction(View view) {
@@ -77,5 +82,10 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    ImageView bartImageView = (ImageView) findViewById(R.id.bartImage);
+    bartImageView.setX(-1000);
+
+    bartImageView.animate().translationXBy(1000).rotation(3600).setDuration(2000);
   }
 }

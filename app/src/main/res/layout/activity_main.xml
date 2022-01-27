@@ -149,6 +149,7 @@
             android:layout_marginTop="14dp"
             android:layout_marginEnd="290dp"
             android:layout_marginBottom="211dp"
+            android:onClick="animateOther"
             android:text="Button" />
 
         <ImageView
@@ -159,7 +160,9 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="0dp"
-            android:onClick="fade"
+            android:contentDescription="bart"
+            android:hint="e.g 5"
+            android:onClick="fadeForBart"
             app:srcCompat="@drawable/bart" />
 
         <ImageView
@@ -169,7 +172,11 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="35dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="11dp"
+            android:alpha="0"
+            android:contentDescription="homer"
+            android:hint="e.g 5"
+            android:onClick="fadeForHomer"
             app:srcCompat="@drawable/homer" />
     </RelativeLayout>
 

@@ -11,14 +11,38 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-  public void fade(View view) {
+//  boolean bartIsShowing = true;
+
+  public void animateOther(View view) {
+    Log.i("Info", "animateOther");
+    ImageView bartImageView = (ImageView) findViewById(R.id.bartImage);
+    ImageView homerImageView = (ImageView) findViewById(R.id.homerImage);
+
+    bartImageView.animate().translationYBy(1000).setDuration(2000);
+    homerImageView.animate().translationXBy(-1000).setDuration(2000);
+
+
+  }
+  public void fadeForBart(View view) {
     Log.i("Info", "Bart Image tapped");
 
     ImageView bartImageView = (ImageView) findViewById(R.id.bartImage);
     ImageView homerImageView = (ImageView) findViewById(R.id.homerImage);
-    bartImageView.animate().alpha(0).setDuration(2000);
 
-    homerImageView.animate().alpha(1).setDuration(2000);
+      bartImageView.animate().alpha(0).setDuration(2000);
+
+      homerImageView.animate().alpha(1).setDuration(2000);
+  }
+
+  public void fadeForHomer(View view) {
+    Log.i("Info", "Homer Image tapped");
+
+    ImageView bartImageView = (ImageView) findViewById(R.id.bartImage);
+    ImageView homerImageView = (ImageView) findViewById(R.id.homerImage);
+
+    bartImageView.animate().alpha(1).setDuration(2000);
+
+    homerImageView.animate().alpha(0).setDuration(2000);
 
   }
   public void clickFunction(View view) {

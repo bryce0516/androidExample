@@ -1,13 +1,13 @@
 package bryce.examplecom.myandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.gridlayout.widget.GridLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -64,6 +64,7 @@ public class MainActivity2 extends AppCompatActivity {
           playAgainButton.setVisibility(View.VISIBLE);
 
           winnerTextView.setVisibility(View.VISIBLE);
+
         }
       }
     }
@@ -75,8 +76,6 @@ public class MainActivity2 extends AppCompatActivity {
 
     TextView winnerTextView = (TextView) findViewById(R.id.winnerTextView);
 
-    winnerTextView.setText(winner + "has won");
-
     playAgainButton.setVisibility(View.INVISIBLE);
 
     winnerTextView.setVisibility(View.INVISIBLE);
@@ -86,7 +85,17 @@ public class MainActivity2 extends AppCompatActivity {
     for(int i = 0; i < gridLayout.getChildCount(); i++){
 
       ImageView child = (ImageView) gridLayout.getChildAt(i);
+
+      child.setImageDrawable(null);
     }
+
+    for(int i = 0; i< gameState.length; i++) {
+      gameState[i] =2;
+    }
+
+
+    activePlayer = 0;
+    gameActive = true;
   }
 
   @Override

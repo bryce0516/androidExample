@@ -6,10 +6,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+  public void fade(View view) {
+    Log.i("Info", "Bart Image tapped");
+
+    ImageView bartImageView = (ImageView) findViewById(R.id.bartImage);
+    ImageView homerImageView = (ImageView) findViewById(R.id.homerImage);
+    bartImageView.animate().alpha(0).setDuration(2000);
+
+    homerImageView.animate().alpha(1).setDuration(2000);
+
+  }
   public void clickFunction(View view) {
 
     EditText nameEditText = (EditText) findViewById(R.id.nameEditText);
@@ -34,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void imageChangeFunction(View view) {
-
+    ImageView image = (ImageView) findViewById(R.id.imageView);
+    image.setImageResource(R.drawable.five);
   }
 
   @Override
